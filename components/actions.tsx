@@ -4,11 +4,10 @@ import { DropdownMenuContentProps } from "@radix-ui/react-dropdown-menu";
 import {
     DropdownMenu,
     DropdownMenuItem,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
     DropdownMenuContent,
 } from "./ui/dropdown-menu";
-import { Ghost, Link2, Pencil, Trash2 } from "lucide-react";
+import {  Link2, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { useApiMutation } from "@/hooks/use-api-mutations";
 import { api } from "@/convex/_generated/api";
