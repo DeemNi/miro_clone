@@ -31,9 +31,9 @@ export const get = query({
       const boards = await getAllOrThrow(ctx.db, ids);
 
       return boards.map((board) => ({
-        ...board, 
+        ...board,
         isFavorite: true,
-      }))
+      }));
     }
 
     const title = args.search as string;

@@ -91,7 +91,7 @@ export const update = mutation({
         }
         const board = await ctx.db.patch(args.id, {
             title: args.title,
-        })
+        });
 
         return board;
     },
