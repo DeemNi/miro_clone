@@ -19,10 +19,11 @@ export const Toolbar = () => {
                     Ellipsis
                 </div>
 
+
             </div>
-            <div className="bg-whire rounded-md p-1.5
+            <div className="relative bg-whire rounded-md p-1.5
             flex flex-col items-center
-            shadow-md">
+            shadow-md bg-white ">
                 <div>
                     Undo
                 </div>
@@ -31,5 +32,14 @@ export const Toolbar = () => {
                 </div>
             </div>
         </div>
+    )
+}
+
+Toolbar.Skeleton = function ToolbarSkeleton() {
+    return (
+        <div className="absolute top-[50%] -translate-y-[50%]
+        left-2 flex flex-col
+        gap-y-4 bg-white h-[360px]
+        w-[52px] shadow-md rounded-md" />
     )
 }
