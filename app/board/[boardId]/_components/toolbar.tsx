@@ -35,7 +35,7 @@ export const Toolbar = () => {
     )
 }
 
-Toolbar.Skeleton = function ToolbarSkeleton() {
+export const ToolbarSkeleton = () => {
     return (
         <div className="absolute top-[50%] -translate-y-[50%]
         left-2 flex flex-col
