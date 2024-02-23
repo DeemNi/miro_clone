@@ -16,7 +16,7 @@ import { Menu } from "lucide-react";
 
 interface InfoProps {
     boardId: string;
-}
+};
 
 const font = Poppins({
     subsets: ['latin'],
@@ -26,7 +26,7 @@ const font = Poppins({
 const TabSeparator = () => {
     return (
         <div className="text-neutral-300 px-1.5">
-
+            |
         </div>
     )
 }
@@ -36,13 +36,13 @@ export const Info = ({
     boardId
 }: InfoProps) => {
 
-    const {onOpen} = useRenameModal();
+    const { onOpen } = useRenameModal();
 
     const data = useQuery(api.board.get, {
         id: boardId as Id<"boards">,
     });
 
-    if (!data) <InfoSkeleton />
+    if (!data) return <InfoSkeleton />
 
     return (
         <div className="absolute top-2 left-2
@@ -64,19 +64,21 @@ export const Info = ({
             </Hint>
             <TabSeparator />
             <Hint label="Edit title" side="bottom" sideOffset={5}>
-            <Button variant={'board'} className="text-base font-normal px-2" 
-            onClick={() => onOpen(data?._id, data?.title)}>
-                {data?.title}
-            </Button>
+                <Button variant={'board'} className="text-base font-normal px-2"
+                    onClick={() => onOpen(data._id, data.title)}>
+                    {data.title}
+                </Button>
             </Hint>
             <TabSeparator />
             <Actions id={data._id} title={data.title} side="bottom"
-            sideOffset={10}>
-<div>
-    <Hint label="Main menu" side="bottom" sideOffset={10}>
-        <Menu size={'icon'} variant='board' />
-    </Hint>
-</div>
+                sideOffset={10}>
+                <div>
+                    <Hint label="Main menu" side="bottom" sideOffset={10}>
+                        <Button size={'icon'} variant='board' >
+                            <Menu />
+                        </Button>
+                    </Hint>
+                </div>
             </Actions>
         </div>
     )
