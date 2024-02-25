@@ -26,13 +26,15 @@ export const Cursor = memo(({
 
     return (
         <foreignObject
-        style={{transform: `translateX(${x}px) translateY(${y}px)`}}
+        style={{
+             transform: `translateX(${x}px) translateY(${y}px)`
+        }}
         height={50} width={name.length * 10 + 24} className="relative drop-shadow-md">
             <MousePointer2 
                 className="h-5 w-5"
                 style={{
                     fill: connectionIdToColor(connectionId),
-                    color: connectionIdToColor(connectionId)
+                    color: connectionIdToColor(connectionId),
                 }}
             />
 
