@@ -114,7 +114,7 @@ export type CanvasState =
     | {
         mode: CanvasMode.Resizing;
         initialBounds: XYWH;
-        cornen: Side;
+        corner: Side;
     };
 
 export enum CanvasMode {

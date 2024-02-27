@@ -34,7 +34,7 @@ export const LayerPreview = memo(({
                     selectionColor={selectionColor}
                 />
             );
-        default:
+        default: 
             console.warn('Unknown layer type');
             return null;
     }
